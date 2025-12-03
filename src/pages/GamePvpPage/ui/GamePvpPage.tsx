@@ -1,17 +1,36 @@
-import { SActions, SGamePvpHeader, SGamePvpPage, SSettings } from "./gamePvpPage.styles";
+import {
+  SActions,
+  SAddPvp,
+  SAddWallet,
+  SButton,
+  SButtonSecondary,
+  SGamePvpHeader,
+  SGamePvpPage,
+  SHeaderActions,
+  SSegmented,
+  SSettings,
+} from "./gamePvpPage.styles";
 import { PlayerWheel } from "@widgets/GameWheel";
-import { Button } from "antd";
 import { ProfileWelcomeCard } from "@entities/user";
 import { Balance, LastWinCard } from "@entities/game";
 import { HorizontalScrollList } from "@shared/components";
+import { MessageIcon, RepeatTime } from "@shared/assets";
+import { LotsList } from "@features/LotsList";
+import { useNavigate } from "react-router-dom";
+import { routes } from "@shared/config";
 
-export const GamePvpPage = () => {
+const GamePvpPage = () => {
+  const navigate = useNavigate();
   const players = [
     { image: "/profile.png", color: "#16c6cc", index: 0 },
     { image: "/profile.png", color: "#4136d9", index: 1 },
     { image: "/profile.png", color: "#d53a30", index: 2 },
     { image: "/profile.png", color: "#741589", index: 3 },
   ];
+
+  const handleToHistory = () => {
+    navigate(routes.pvpHistory);
+  };
 
   return (
     <SGamePvpPage>
@@ -26,15 +45,27 @@ export const GamePvpPage = () => {
 
       <SSettings>
         <Balance />
-        <div>Переключалка</div>
-        <div>Кнопочки</div>
+        <SSegmented
+          options={[
+            { label: "1 гифт", value: "gift" },
+            { label: "1.33 TON", value: "ton" },
+          ]}
+        />
+        <SHeaderActions>
+          <SButton onClick={handleToHistory} icon={<RepeatTime />} />
+          <SButtonSecondary icon={<MessageIcon />} />
+        </SHeaderActions>
       </SSettings>
 
       <PlayerWheel players={players} onWinner={(winner) => console.log(winner)} />
       <SActions>
-        <Button>Добавить в PVP</Button>
-        <Button>1.33 TON</Button>
+        <SAddPvp>+ Добавить в PVP</SAddPvp>
+        <SAddWallet icon={<img src="/present.png" />}>1.33 TON</SAddWallet>
       </SActions>
+
+      <LotsList />
     </SGamePvpPage>
   );
 };
+
+export default GamePvpPage;

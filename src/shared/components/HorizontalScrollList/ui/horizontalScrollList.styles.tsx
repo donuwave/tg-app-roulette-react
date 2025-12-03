@@ -10,22 +10,18 @@ export const Container = styled.div`
 export const SList = styled.div`
   width: 100%;
   height: 100%;
-
   display: flex;
   gap: 6px;
   flex-wrap: nowrap;
-
   overflow-x: auto;
   overflow-y: hidden;
-
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   -ms-overflow-style: none;
 
   &::-webkit-scrollbar {
     display: none;
   }
-
-  position: relative;
 `;
 
 export const GradientLeftEdgeOverlay = styled.div`

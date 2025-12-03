@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const SMenu = styled.div`
   display: grid;
@@ -18,11 +19,11 @@ export const SMenu = styled.div`
   width: 100%;
 `;
 
-export const SMenuItem = styled.div`
+export const SMenuItem = styled(Link)<{ $selected: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
   font-size: 12px;
-  color: ${({ theme }) => theme.colors.text.secondary};
+  color: ${({ theme, $selected }) => ($selected ? "white" : theme.colors.text.secondary)};
 `;
