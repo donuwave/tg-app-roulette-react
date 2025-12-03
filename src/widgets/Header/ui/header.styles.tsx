@@ -15,4 +15,5 @@ export const SHeader = styled.header`
 export const SActions = styled.div`
   display: flex;
   align-items: center;
+  align-self: start;
 `;
