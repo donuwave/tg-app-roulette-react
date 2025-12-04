@@ -1,1 +1,1 @@
-export * from "./ui/HistoryCard";
+export * from "./ui/HistoryCard/HistoryCard";

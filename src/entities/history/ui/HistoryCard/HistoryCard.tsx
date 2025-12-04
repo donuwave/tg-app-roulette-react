@@ -13,13 +13,18 @@ import {
   SCard,
   SFooter,
   SDate,
-} from "./historyCard.styles";
+} from "./historyCard.styles.ts";
+import type { FC } from "react";
 
 //TODO: Вытащить список подарков в отдельный компонент
 
-export const HistoryCard = () => {
+interface IHistoryCardProps {
+  onClick: (card: unknown) => void;
+}
+
+export const HistoryCard: FC<IHistoryCardProps> = ({ onClick }) => {
   return (
-    <SHistoryCard>
+    <SHistoryCard onClick={() => onClick({ id: 1 })}>
       <SHeadMain>
         <SHead>
           <SAvatar>

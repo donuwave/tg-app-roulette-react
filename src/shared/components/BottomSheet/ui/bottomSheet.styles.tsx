@@ -18,7 +18,7 @@ export const AnimatedModal = styled(motion.div)`
 
 export const SModalWrapper = styled(Modal)<SModalWrapperProps>`
   .ant-modal-content {
-    height: ${({ $height }) => $height};
+    max-height: ${({ $height }) => $height};
     border-radius: 18px 18px 0 0;
     background: #282729;
 

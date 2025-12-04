@@ -6,8 +6,8 @@ import type { FC, ReactNode } from "react";
 import type { IGift } from "@widgets/AddingGifts";
 
 interface IGiftsList {
-  selectedGifts: IGift[];
   itemContent: (item: IGift) => ReactNode;
+  selectedGifts?: IGift[];
 }
 
 export const GiftsList: FC<IGiftsList> = ({ itemContent, selectedGifts }) => {
@@ -19,19 +19,15 @@ export const GiftsList: FC<IGiftsList> = ({ itemContent, selectedGifts }) => {
     { id: 4, src: "/present-card.png" },
     { id: 5, src: "/present-card.png" },
     { id: 6, src: "/present-card.png" },
-    { id: 7, src: "/present-card.png" },
-    { id: 8, src: "/present-card.png" },
-    { id: 9, src: "/present-card.png" },
-    { id: 10, src: "/present-card.png" },
-    { id: 11, src: "/present-card.png" },
-    { id: 12, src: "/present-card.png" },
-    { id: 13, src: "/present-card.png" },
   ];
 
   return (
     <SGiftList>
       {data.map((card) =>
-        itemContent({ ...card, isChoice: selectedGifts.some((s) => s.id === card.id) })
+        itemContent({
+          ...card,
+          isChoice: selectedGifts ? selectedGifts.some((s) => s.id === card.id) : false,
+        })
       )}
     </SGiftList>
   );
