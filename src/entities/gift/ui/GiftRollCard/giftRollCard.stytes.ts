@@ -20,6 +20,7 @@ export const SContent = styled.div`
   display: grid;
   align-content: center;
   justify-content: center;
+  text-align: center;
 `;
 
 export const SName = styled.span`
@@ -27,5 +28,13 @@ export const SName = styled.span`
 `;
 
 export const SPrice = styled.span`
+  display: flex;
+  align-items: center;
   font-size: 8px;
+  gap: 4px;
+`;
+
+export const SIcon = styled.img`
+  width: 8px;
+  height: 8px;
 `;

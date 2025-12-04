@@ -18,17 +18,16 @@ import type { FC } from "react";
 interface IRollCardProps {
   open: boolean;
   onClose: () => void;
+  onClickPresent?: (gift: unknown) => void;
 }
 
-export const RollCard: FC<IRollCardProps> = ({ open, onClose }) => {
+export const RollCard: FC<IRollCardProps> = ({ open, onClose, onClickPresent }) => {
   // Этот компонент всю информацию и массив подарков получает из вне
   const data = [
     { id: 1, src: "/present-card.png" },
     { id: 2, src: "/present-card.png" },
     { id: 3, src: "/present-card.png" },
     { id: 4, src: "/present-card.png" },
-    { id: 5, src: "/present-card.png" },
-    { id: 6, src: "/present-card.png" },
   ];
 
   return (
@@ -37,7 +36,7 @@ export const RollCard: FC<IRollCardProps> = ({ open, onClose }) => {
       header={<SHeaderTitle>Ролл #54635</SHeaderTitle>}
       footer={
         <SFooter>
-          <SClose>Закрыть</SClose>
+          <SClose onClick={onClose}>Закрыть</SClose>
         </SFooter>
       }
       onClose={onClose}
@@ -57,7 +56,7 @@ export const RollCard: FC<IRollCardProps> = ({ open, onClose }) => {
       </SHeadContent>
       <SList>
         {data.map((card) => (
-          <GiftRollCard key={card.id} {...card} />
+          <GiftRollCard key={card.id} onClick={onClickPresent} {...card} />
         ))}
       </SList>
     </BottomSheet>

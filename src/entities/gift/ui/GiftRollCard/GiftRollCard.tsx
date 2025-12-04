@@ -1,17 +1,21 @@
-import { SContent, SGiftCard, SImg, SName, SPrice } from "./giftRollCard.stytes";
+import { SContent, SGiftCard, SIcon, SImg, SName, SPrice } from "./giftRollCard.stytes";
 import type { FC } from "react";
 
 export const GiftRollCard: FC<{
   id: number;
   src: string;
-}> = ({ src }) => {
+  onClick?: (gift: unknown) => void;
+}> = ({ src, onClick }) => {
   return (
-    <SGiftCard>
+    <SGiftCard onClick={() => onClick && onClick({ id: 1 })}>
       <SImg src={src} />
 
       <SContent>
         <SName>Gift Red</SName>
-        <SPrice>45.244 TON</SPrice>
+        <SPrice>
+          <SIcon src="/currency.png" alt="" />
+          <span>45.244 TON</span>
+        </SPrice>
       </SContent>
     </SGiftCard>
   );
