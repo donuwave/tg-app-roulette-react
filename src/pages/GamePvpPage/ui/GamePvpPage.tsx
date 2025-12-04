@@ -1,6 +1,5 @@
 import {
   SActions,
-  SAddPvp,
   SAddWallet,
   SButton,
   SButtonSecondary,
@@ -18,6 +17,7 @@ import { MessageIcon, RepeatTime } from "@shared/assets";
 import { LotsList } from "@features/LotsList";
 import { useNavigate } from "react-router-dom";
 import { routes } from "@shared/config";
+import { AddingGifts } from "@widgets/AddingGifts";
 
 const GamePvpPage = () => {
   const navigate = useNavigate();
@@ -59,7 +59,7 @@ const GamePvpPage = () => {
 
       <PlayerWheel players={players} onWinner={(winner) => console.log(winner)} />
       <SActions>
-        <SAddPvp>+ Добавить в PVP</SAddPvp>
+        <AddingGifts />
         <SAddWallet icon={<img src="/present.png" />}>1.33 TON</SAddWallet>
       </SActions>
 

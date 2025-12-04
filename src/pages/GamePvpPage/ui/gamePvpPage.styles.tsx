@@ -75,21 +75,6 @@ export const SActions = styled.div`
   gap: 10px;
 `;
 
-export const SAddPvp = styled(Button)`
-  &.ant-btn {
-    background: ${({ theme }) => theme.colors.active.main};
-    border-color: #666666;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 700;
-
-    &&:hover {
-      background: ${({ theme }) => theme.colors.background.primary};
-      color: ${({ theme }) => theme.colors.active.main};
-    }
-  }
-`;
-
 export const SAddWallet = styled(Button)`
   &.ant-btn {
     background: ${({ theme }) => theme.colors.text.main};
