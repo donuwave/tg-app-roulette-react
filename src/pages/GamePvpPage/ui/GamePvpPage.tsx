@@ -27,7 +27,6 @@ const GamePvpPage = () => {
     { image: "/profile.png", color: "#d53a30", index: 2 },
     { image: "/profile.png", color: "#741589", index: 3 },
   ];
-
   const handleToHistory = () => {
     navigate(routes.pvpHistory);
   };
