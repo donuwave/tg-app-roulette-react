@@ -5,6 +5,7 @@ import { Layout } from "../layout/Layout";
 
 const GamePvpPage = lazy(() => import(/* webpackPrefetch: true */ "@pages/GamePvpPage"));
 const HistoryPvpPage = lazy(() => import(/* webpackPrefetch: true */ "@pages/HistoryPvpPage"));
+const InventoryPage = lazy(() => import(/* webpackPrefetch: true */ "@pages/InventoryPage"));
 
 export const router = createBrowserRouter([
   {
@@ -23,7 +24,7 @@ export const router = createBrowserRouter([
       },
       {
         path: routes.inventory,
-        element: <div>inventory page</div>,
+        element: <InventoryPage />,
       },
       {
         path: routes.pvp,

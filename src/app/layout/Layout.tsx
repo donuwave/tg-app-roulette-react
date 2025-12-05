@@ -1,13 +1,16 @@
 import { Menu } from "@widgets/Menu";
 import { Outlet } from "react-router-dom";
 
-import { SLayout } from "./layout.styles";
+import { SFixedContent, SLayout } from "./layout.styles";
 import { Header } from "@widgets/Header";
 
 export const Layout = () => {
   return (
     <SLayout>
-      <Header />
+      <SFixedContent>
+        <Header />
+        <div id="header-actions" />
+      </SFixedContent>
       <Menu />
       <Outlet />
     </SLayout>

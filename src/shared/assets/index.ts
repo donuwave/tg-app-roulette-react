@@ -8,3 +8,8 @@ export * from "./AllIcon";
 export * from "./LogoIcon";
 export * from "./SettingIcon";
 export * from "./CloseIcon";
+export * from "./PlusIcon";
+export * from "./CheckIcon";
+export * from "./TelegramIcon";
+export * from "./SortIcon";
+export * from "./SearchIcon";

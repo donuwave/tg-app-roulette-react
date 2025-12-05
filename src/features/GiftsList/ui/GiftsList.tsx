@@ -3,7 +3,7 @@
 
 import { SGiftList } from "./giftsList.style";
 import type { FC, ReactNode } from "react";
-import type { IGift } from "@widgets/AddingGifts";
+import type { IGift } from "@entities/gift";
 
 interface IGiftsList {
   itemContent: (item: IGift) => ReactNode;
@@ -19,6 +19,14 @@ export const GiftsList: FC<IGiftsList> = ({ itemContent, selectedGifts }) => {
     { id: 4, src: "/present-card.png" },
     { id: 5, src: "/present-card.png" },
     { id: 6, src: "/present-card.png" },
+    { id: 7, src: "/present-card.png" },
+    { id: 8, src: "/present-card.png" },
+    { id: 9, src: "/present-card.png" },
+    { id: 10, src: "/present-card.png" },
+    { id: 11, src: "/present-card.png" },
+    { id: 12, src: "/present-card.png" },
+    { id: 13, src: "/present-card.png" },
+    { id: 14, src: "/present-card.png" },
   ];
 
   return (

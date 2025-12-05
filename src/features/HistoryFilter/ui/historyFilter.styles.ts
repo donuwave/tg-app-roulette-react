@@ -3,7 +3,6 @@ import { Tag } from "antd";
 
 export const SFilterList = styled.div`
   display: flex;
-  padding-bottom: 14px;
 `;
 
 export const STag = styled(Tag.CheckableTag)`

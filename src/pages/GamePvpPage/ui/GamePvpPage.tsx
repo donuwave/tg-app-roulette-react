@@ -11,13 +11,14 @@ import {
 } from "./gamePvpPage.styles";
 import { PlayerWheel } from "@widgets/GameWheel";
 import { ProfileWelcomeCard } from "@entities/user";
-import { Balance, LastWinCard } from "@entities/game";
+import { LastWinCard } from "@entities/game";
 import { HorizontalScrollList } from "@shared/components";
 import { MessageIcon, RepeatTime } from "@shared/assets";
 import { LotsList } from "@features/LotsList";
 import { useNavigate } from "react-router-dom";
 import { routes } from "@shared/config";
 import { AddingGifts } from "@widgets/AddingGifts";
+import { AddingBalance } from "@widgets/AddingBalance";
 
 const GamePvpPage = () => {
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ const GamePvpPage = () => {
       </SGamePvpHeader>
 
       <SSettings>
-        <Balance />
+        <AddingBalance />
         <SSegmented
           options={[
             { label: "1 гифт", value: "gift" },

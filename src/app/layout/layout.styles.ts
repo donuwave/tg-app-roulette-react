@@ -8,3 +8,14 @@ export const SLayout = styled.div`
   background: ${({ theme }) => theme.colors.background.primary};
   min-height: 100dvh;
 `;
+
+export const SFixedContent = styled.div`
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 55px;
+  background: ${({ theme }) => theme.colors.background.primary};
+  padding: 8px;
+  z-index: 1000;
+`;

@@ -20,7 +20,7 @@ export const HistoryList = () => {
       <GiftBottomSheet open={isOpenGift} onClose={handleCloseGift} />
 
       <SHistoryList>
-        {[1, 2, 3, 4, 5, 6].map((el) => (
+        {[1, 2, 3, 4, 5, 6, 7].map((el) => (
           <HistoryCard key={el} onClick={handleOpenRollCard} />
         ))}
       </SHistoryList>

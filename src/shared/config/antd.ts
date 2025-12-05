@@ -24,10 +24,19 @@ export const getAntDesignConfig = (theme: DefaultTheme): ThemeConfig => ({
       colorPrimaryHover: theme.colors.active.main,
     },
     Button: {
-      defaultActiveBg: "inherit",
-      defaultHoverBg: "inherit",
+      defaultActiveBg: theme.colors.background.primary,
+      defaultHoverBg: theme.colors.background.primary,
+      defaultActiveColor: theme.colors.text.main,
+      defaultHoverColor: theme.colors.text.main,
       defaultActiveBorderColor: "#00B2BC",
       defaultHoverBorderColor: "#00B2BC",
+    },
+    Checkbox: {
+      controlInteractiveSize: 25,
+      colorBgContainer: "#282729",
+      colorBorder: "#535254",
+      colorPrimary: theme.colors.active.main,
+      colorText: theme.colors.text.main,
     },
   },
 });

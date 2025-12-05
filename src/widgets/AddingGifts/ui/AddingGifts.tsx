@@ -11,13 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { routes } from "@shared/config";
 import { BottomSheet } from "@shared/components";
 import { GiftsList } from "@features/GiftsList";
-import { GiftCard } from "@entities/gift";
-
-export interface IGift {
-  id: number;
-  src: string;
-  isChoice: boolean;
-}
+import { GiftCard, type IGift } from "@entities/gift";
 
 export const AddingGifts = () => {
   const [isOpen, setIsOpen] = useState(false);
