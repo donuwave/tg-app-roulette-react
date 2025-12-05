@@ -1,26 +1,17 @@
 import { SCount, SIdentifier, SList, SLotsHeader, SLotsList } from "./lotsList.styles";
 import { ParticipantCard, RollCard } from "@entities/game";
-import { useState } from "react";
 import { GiftBottomSheet } from "@entities/gift";
+import { useOpenGiftFromLot } from "@shared/hooks";
 
-// HistoryList - дубликат логики
 export const LotsList = () => {
-  const [isOpenLot, setIsOpenLot] = useState(false);
-  const [isOpenGift, setIsOpenGift] = useState(false);
-
-  const handleCloseRollCard = () => setIsOpenLot(false);
-  const handleOpenRollCard = (card: unknown) => {
-    setIsOpenLot(true);
-    console.log(card);
-  };
-
-  const handleCloseGift = () => {
-    setIsOpenGift(false);
-  };
-  const handleOpenGift = (gift: unknown) => {
-    setIsOpenGift(true);
-    console.log(gift);
-  };
+  const {
+    isOpenLot,
+    handleOpenGift,
+    handleOpenRollCard,
+    handleCloseRollCard,
+    handleCloseGift,
+    isOpenGift,
+  } = useOpenGiftFromLot();
 
   return (
     <>

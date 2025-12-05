@@ -1,26 +1,18 @@
 import { HistoryCard } from "@entities/history";
 import { SHistoryList } from "./historyList.styles";
 import { RollCard } from "@entities/game";
-import { useState } from "react";
 import { GiftBottomSheet } from "@entities/gift";
+import { useOpenGiftFromLot } from "@shared/hooks";
 
 export const HistoryList = () => {
-  const [isOpenGift, setIsOpenGift] = useState(false);
-  const [isOpenLot, setIsOpenLot] = useState(false);
-
-  const handleCloseRollCard = () => setIsOpenLot(false);
-  const handleOpenRollCard = (card: unknown) => {
-    setIsOpenLot(true);
-    console.log(card);
-  };
-
-  const handleCloseGift = () => {
-    setIsOpenGift(false);
-  };
-  const handleOpenGift = (gift: unknown) => {
-    setIsOpenGift(true);
-    console.log(gift);
-  };
+  const {
+    handleOpenGift,
+    handleOpenRollCard,
+    handleCloseRollCard,
+    isOpenGift,
+    handleCloseGift,
+    isOpenLot,
+  } = useOpenGiftFromLot();
 
   return (
     <>
