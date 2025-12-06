@@ -3,6 +3,7 @@ import { Button, Segmented } from "antd";
 
 export const SGamePvpPage = styled.div`
   padding-top: 10px;
+  display: grid;
 `;
 
 export const SGamePvpHeader = styled.div`
