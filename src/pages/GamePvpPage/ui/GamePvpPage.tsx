@@ -37,6 +37,7 @@ const GamePvpPage = () => {
       <SGamePvpHeader>
         <ProfileWelcomeCard />
         <HorizontalScrollList
+          isShadow
           list={[1, 2, 3, 4, 5, 6]}
           itemContent={(item) => <LastWinCard key={item} />}
           loading={false}

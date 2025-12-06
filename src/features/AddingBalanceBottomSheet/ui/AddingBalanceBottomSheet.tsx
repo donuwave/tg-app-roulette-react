@@ -29,7 +29,7 @@ export const AddingBalanceBottomSheet: FC<IGiftBottomSheetProps> = ({ open, onCl
     <BottomSheet
       open={open}
       onClose={onClose}
-      height="55dvh"
+      height="65dvh"
       footer={
         <SFooter>
           <SSubmit onClick={onClose}>Пополнить баланс</SSubmit>

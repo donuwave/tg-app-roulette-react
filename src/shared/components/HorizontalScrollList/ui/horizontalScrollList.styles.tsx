@@ -1,27 +1,18 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const Container = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  overflow-y: hidden;
+  overflow: hidden;
 `;
 
-export const SList = styled.div`
-  width: 100%;
-  height: 100%;
+export const SList = styled(motion.div)`
   display: flex;
-  gap: 6px;
   flex-wrap: nowrap;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  gap: 6px;
+  height: 100%;
 `;
 
 export const GradientLeftEdgeOverlay = styled.div`

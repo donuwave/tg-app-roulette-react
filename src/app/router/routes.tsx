@@ -6,6 +6,8 @@ import { Layout } from "../layout/Layout";
 const GamePvpPage = lazy(() => import(/* webpackPrefetch: true */ "@pages/GamePvpPage"));
 const HistoryPvpPage = lazy(() => import(/* webpackPrefetch: true */ "@pages/HistoryPvpPage"));
 const InventoryPage = lazy(() => import(/* webpackPrefetch: true */ "@pages/InventoryPage"));
+const ShopPage = lazy(() => import(/* webpackPrefetch: true */ "@pages/ShopPage"));
+const ShopHistoryPage = lazy(() => import(/* webpackPrefetch: true */ "@pages/ShopHistoryPage"));
 
 export const router = createBrowserRouter([
   {
@@ -35,7 +37,10 @@ export const router = createBrowserRouter([
       },
       {
         path: routes.shop,
-        element: <div>shop page</div>,
+        children: [
+          { index: true, element: <ShopPage /> },
+          { path: routes.shopHistory, element: <ShopHistoryPage /> },
+        ],
       },
     ],
   },

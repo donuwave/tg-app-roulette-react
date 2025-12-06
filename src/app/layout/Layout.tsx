@@ -11,6 +11,7 @@ export const Layout = () => {
         <Header />
         <div id="header-actions" />
       </SFixedContent>
+
       <Menu />
       <Outlet />
     </SLayout>

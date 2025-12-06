@@ -5,4 +5,5 @@ export const routes = {
   pvp: "/pvp",
   pvpHistory: "/pvp/history",
   shop: "/shop",
+  shopHistory: "/shop/history",
 };

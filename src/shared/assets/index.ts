@@ -13,3 +13,5 @@ export * from "./CheckIcon";
 export * from "./TelegramIcon";
 export * from "./SortIcon";
 export * from "./SearchIcon";
+export * from "./ArrowRightIcon";
+export * from "./ArrowTopIcon";

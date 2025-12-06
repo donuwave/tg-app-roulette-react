@@ -25,6 +25,7 @@ export const SBalanceText = styled.div`
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 19px;
+  font-size: 12px;
 `;
 
 export const SPlus = styled.span`
