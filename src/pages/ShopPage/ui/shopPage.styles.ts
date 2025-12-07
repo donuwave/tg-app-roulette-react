@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { Button } from "antd";
 
+export const SShopPage = styled.div`
+  padding-top: 110px;
+`;
+
 export const SShopHeader = styled.div`
   display: grid;
   gap: 10px;

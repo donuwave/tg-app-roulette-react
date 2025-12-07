@@ -2,6 +2,7 @@ export const routes = {
   profile: "/profile",
   solo: "/solo",
   inventory: "/inventory",
+  createPvp: "/pvp/create",
   pvp: "/pvp",
   pvpHistory: "/pvp/history",
   shop: "/shop",

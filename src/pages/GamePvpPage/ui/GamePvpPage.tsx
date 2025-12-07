@@ -20,6 +20,7 @@ import { routes } from "@shared/config";
 import { AddingGifts } from "@widgets/AddingGifts";
 import { AddingBalance } from "@widgets/AddingBalance";
 
+//TODO: На этой странице я буду получать данные с бэка по текущей PVP комнате
 const GamePvpPage = () => {
   const navigate = useNavigate();
   const players = [

@@ -15,3 +15,5 @@ export * from "./SortIcon";
 export * from "./SearchIcon";
 export * from "./ArrowRightIcon";
 export * from "./ArrowTopIcon";
+export * from "./ModePvpIcon";
+export * from "./PvpThisFriendIcon";

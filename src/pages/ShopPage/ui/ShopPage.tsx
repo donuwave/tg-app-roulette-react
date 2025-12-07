@@ -1,7 +1,15 @@
 import { HeaderPortal } from "@widgets/Header";
 import { HorizontalScrollList } from "@shared/components";
 import { AdvertisementCard } from "@entities/gift";
-import { SActions, SShopHeader, STitle, SButton, STitleText, SFilter } from "./shopPage.styles";
+import {
+  SActions,
+  SShopHeader,
+  STitle,
+  SButton,
+  STitleText,
+  SFilter,
+  SShopPage,
+} from "./shopPage.styles";
 import { AddingBalance } from "@widgets/AddingBalance";
 import { RepeatTime } from "@shared/assets";
 import { useNavigate } from "react-router-dom";
@@ -11,11 +19,10 @@ import { ShopFilter } from "@features/ShopFilter";
 
 const ShopPage = () => {
   const navigate = useNavigate();
-
   const handleToHistory = () => navigate(routes.shopHistory);
 
   return (
-    <div>
+    <SShopPage>
       <HeaderPortal>
         <SShopHeader>
           <STitle>
@@ -37,7 +44,9 @@ const ShopPage = () => {
           </SFilter>
         </SShopHeader>
       </HeaderPortal>
-    </div>
+
+      <div>dffff</div>
+    </SShopPage>
   );
 };
 

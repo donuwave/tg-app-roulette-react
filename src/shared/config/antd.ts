@@ -38,5 +38,10 @@ export const getAntDesignConfig = (theme: DefaultTheme): ThemeConfig => ({
       colorPrimary: theme.colors.active.main,
       colorText: theme.colors.text.main,
     },
+    Slider: {
+      trackBg: "#0d4245",
+      trackHoverBg: "#0d4245",
+      railBg: "#0d4245",
+    },
   },
 });

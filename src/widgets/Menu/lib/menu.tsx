@@ -4,9 +4,9 @@ import type { IMenu } from "../model/menu.types";
 import { routes } from "@shared/config";
 
 export const menuItems: IMenu[] = [
-  { path: routes.solo, Icon: RocketIcon, label: "Соло" },
-  { path: routes.inventory, Icon: LayerIcon, label: "Инвентарь" },
-  { path: routes.pvp, Icon: PvpIcon, label: "" },
-  { path: routes.shop, Icon: ShopIcon, label: "Магазин" },
-  { path: routes.profile, Icon: ShopIcon, label: "Профиль" },
+  { key: "solo", path: routes.solo, Icon: RocketIcon, label: "Соло" },
+  { key: "inventory", path: routes.inventory, Icon: LayerIcon, label: "Инвентарь" },
+  { key: "pvp", path: "", Icon: PvpIcon, label: "" },
+  { key: "shop", path: routes.shop, Icon: ShopIcon, label: "Магазин" },
+  { key: "profile", path: routes.profile, Icon: ShopIcon, label: "Профиль" },
 ];
