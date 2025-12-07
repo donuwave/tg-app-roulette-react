@@ -9,6 +9,8 @@ const InventoryPage = lazy(() => import(/* webpackPrefetch: true */ "@pages/Inve
 // const ShopPage = lazy(() => import(/* webpackPrefetch: true */ "@pages/ShopPage"));
 const ShopHistoryPage = lazy(() => import(/* webpackPrefetch: true */ "@pages/ShopHistoryPage"));
 const CreateRoomPvp = lazy(() => import(/* webpackPrefetch: true */ "@pages/CreateRoomPvp"));
+const ProfilePage = lazy(() => import(/* webpackPrefetch: true */ "@pages/ProfilePage"));
+const TaskPage = lazy(() => import(/* webpackPrefetch: true */ "@pages/TaskPage"));
 
 export const router = createBrowserRouter([
   {
@@ -19,8 +21,9 @@ export const router = createBrowserRouter([
       { index: true, element: <Navigate to={routes.profile} replace /> },
       {
         path: routes.profile,
-        element: <div>profile page</div>,
+        element: <ProfilePage />,
       },
+      { path: routes.tasks, element: <TaskPage /> },
       {
         path: routes.solo,
         element: <div>Solo page</div>,

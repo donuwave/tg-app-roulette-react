@@ -17,3 +17,6 @@ export * from "./ArrowRightIcon";
 export * from "./ArrowTopIcon";
 export * from "./ModePvpIcon";
 export * from "./PvpThisFriendIcon";
+export * from "./StillIcon";
+export * from "./CheckmarkIcon";
+export * from "./WalletIcon";
