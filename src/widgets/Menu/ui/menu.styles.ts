@@ -71,3 +71,19 @@ export const SModePvp = styled(Link)`
     padding-left: 10px;
   }
 `;
+
+export const SAvatar = styled.div`
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`;

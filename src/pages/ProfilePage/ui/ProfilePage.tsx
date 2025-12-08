@@ -1,11 +1,12 @@
-import { SHead, SProfilePage, STitle } from "./profilePage.styles";
+import { SActions, SHead, SProfilePage, STitle } from "./profilePage.styles";
 import { ProfileInfo } from "@features/ProfileInfo";
 import { HeaderPortal } from "@widgets/Header";
 import { ProfileBalance } from "@widgets/ProfileBalance";
 import { useState } from "react";
 import { ProfileSegmented } from "@entities/user";
-import { ProfileAvatars } from "@widgets/ProfileAvatars";
 import { ProfileTask } from "@widgets/ProfileTask";
+import { CurrentListAvatars } from "@features/CurrentListAvatars";
+import { AvatarShoppingList } from "@widgets/AvatarShoppingList";
 
 type IProfileSegmented = "profile" | "avatar";
 
@@ -25,7 +26,12 @@ const ProfilePage = () => {
         </SHead>
       </HeaderPortal>
       {chapter === "profile" && <ProfileTask />}
-      {chapter === "avatar" && <ProfileAvatars />}
+      {chapter === "avatar" && (
+        <SActions>
+          <CurrentListAvatars />
+          <AvatarShoppingList />
+        </SActions>
+      )}
     </SProfilePage>
   );
 };
