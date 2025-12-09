@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+//TODO: В дальнейше здесь можно получать контент и здесь же его записывать
 export const useOpenGiftFromLot = () => {
   const [isOpenGift, setIsOpenGift] = useState(false);
   const [isOpenLot, setIsOpenLot] = useState(false);

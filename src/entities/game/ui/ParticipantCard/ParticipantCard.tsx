@@ -10,15 +10,10 @@ import {
   SPercent,
   SPrice,
 } from "./participantCard.styles";
-import type { FC } from "react";
 
-interface IParticipantCardProps {
-  onClick: (card: unknown) => void;
-}
-
-export const ParticipantCard: FC<IParticipantCardProps> = ({ onClick }) => {
+export const ParticipantCard = () => {
   return (
-    <SParticipantCard onClick={() => onClick({ id: 1 })}>
+    <SParticipantCard>
       <SHeadMain>
         <SHead>
           <SAvatar>

@@ -11,44 +11,11 @@ const FILTER_OPTIONS: IFilterOptions[] = [
 ];
 
 export const HistoryFilter = () => {
-  const [selected, setSelected] = useState<IFilter[]>(["all"]);
-  // Запихнуть в zustand при использовании
+  const [selected, setSelected] = useState<IFilter>("all");
 
   const handleToggle = (value: IFilter) => {
-    setSelected((prev) => {
-      if (value === "all") {
-        return ["all"];
-      }
-
-      const wasSelected = prev.includes(value);
-      let newSelection = [...prev];
-
-      if (wasSelected) {
-        newSelection = newSelection.filter((item) => item !== value);
-      } else {
-        newSelection.push(value);
-      }
-
-      if (newSelection.includes("all")) {
-        newSelection = newSelection.filter((item) => item !== "all");
-      }
-
-      if (newSelection.length === 0) {
-        return ["all"];
-      }
-
-      return newSelection;
-    });
+    setSelected(value);
   };
-
-  const getActiveFilters = () => {
-    if (selected.includes("all")) {
-      return ["all"];
-    }
-    return selected;
-  };
-
-  const activeFilters = getActiveFilters();
 
   return (
     <SFilterList>
@@ -56,7 +23,7 @@ export const HistoryFilter = () => {
         <STag
           key={option.value}
           icon={option.icon}
-          checked={activeFilters.includes(option.value)}
+          checked={selected === option.value}
           onChange={() => handleToggle(option.value)}
         >
           {option.label}

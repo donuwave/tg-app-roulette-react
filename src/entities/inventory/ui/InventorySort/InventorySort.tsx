@@ -4,6 +4,7 @@ import { SAction, SCheckbox, SContent, SFooter, SSubmit, STitle } from "./invent
 import { SortIcon } from "@shared/assets";
 
 export const InventorySort = () => {
+  const [selectedIndex, setSelectedIndex] = useState(5);
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClose = () => setIsOpen(false);
@@ -24,10 +25,21 @@ export const InventorySort = () => {
         onClose={handleClose}
       >
         <SContent>
-          <SCheckbox>Сначала дорогие</SCheckbox>
-          <SCheckbox>Сначала дешевые</SCheckbox>
-          <SCheckbox>Самые популярные</SCheckbox>
-          <SCheckbox>Новинки</SCheckbox>
+          <SCheckbox checked={selectedIndex === 0} onChange={() => setSelectedIndex(0)}>
+            Сначала дорогие
+          </SCheckbox>
+
+          <SCheckbox checked={selectedIndex === 1} onChange={() => setSelectedIndex(1)}>
+            Сначала дешевые
+          </SCheckbox>
+
+          <SCheckbox checked={selectedIndex === 2} onChange={() => setSelectedIndex(2)}>
+            Самые популярные
+          </SCheckbox>
+
+          <SCheckbox checked={selectedIndex === 3} onChange={() => setSelectedIndex(3)}>
+            Новинки
+          </SCheckbox>
         </SContent>
       </BottomSheet>
     </>

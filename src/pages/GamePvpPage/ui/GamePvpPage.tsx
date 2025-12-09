@@ -11,7 +11,7 @@ import {
 } from "./gamePvpPage.styles";
 import { PlayerWheel } from "@widgets/GameWheel";
 import { ProfileWelcomeCard } from "@entities/user";
-import { LastWinCard } from "@entities/game";
+import { LastWinCard, RollCard } from "@entities/game";
 import { HorizontalScrollList } from "@shared/components";
 import { MessageIcon, RepeatTime } from "@shared/assets";
 import { LotsList } from "@features/LotsList";
@@ -19,6 +19,8 @@ import { useNavigate } from "react-router-dom";
 import { routes } from "@shared/config";
 import { AddingGifts } from "@widgets/AddingGifts";
 import { AddingBalance } from "@widgets/AddingBalance";
+import { useOpenGiftFromLot } from "@shared/hooks";
+import { GiftBottomSheet } from "@entities/gift";
 
 //TODO: На этой странице я буду получать данные с бэка по текущей PVP комнате
 const GamePvpPage = () => {
@@ -33,40 +35,59 @@ const GamePvpPage = () => {
     navigate(routes.pvpHistory);
   };
 
+  const {
+    handleOpenGift,
+    handleOpenRollCard,
+    handleCloseRollCard,
+    isOpenGift,
+    handleCloseGift,
+    isOpenLot,
+  } = useOpenGiftFromLot();
+
+  const handleWinner = (winner: unknown) => {
+    handleOpenRollCard(winner);
+    console.log(winner);
+  };
+
   return (
-    <SGamePvpPage>
-      <SGamePvpHeader>
-        <ProfileWelcomeCard />
-        <HorizontalScrollList
-          isShadow
-          list={[1, 2, 3, 4, 5, 6]}
-          itemContent={(item) => <LastWinCard key={item} />}
-          loading={false}
-        />
-      </SGamePvpHeader>
+    <>
+      <RollCard open={isOpenLot} onClickPresent={handleOpenGift} onClose={handleCloseRollCard} />
+      <GiftBottomSheet open={isOpenGift} onClose={handleCloseGift} />
 
-      <SSettings>
-        <AddingBalance />
-        <SSegmented
-          options={[
-            { label: "1 гифт", value: "gift" },
-            { label: "1.33 TON", value: "ton" },
-          ]}
-        />
-        <SHeaderActions>
-          <SButton onClick={handleToHistory} icon={<RepeatTime />} />
-          <SButtonSecondary icon={<MessageIcon />} />
-        </SHeaderActions>
-      </SSettings>
+      <SGamePvpPage>
+        <SGamePvpHeader>
+          <ProfileWelcomeCard />
+          <HorizontalScrollList
+            isShadow
+            list={[1, 2, 3, 4, 5, 6]}
+            itemContent={(item) => <LastWinCard key={item} />}
+            loading={false}
+          />
+        </SGamePvpHeader>
 
-      <PlayerWheel players={players} onWinner={(winner) => console.log(winner)} />
-      <SActions>
-        <AddingGifts />
-        <SAddWallet icon={<img src="/present.png" />}>1.33 TON</SAddWallet>
-      </SActions>
+        <SSettings>
+          <AddingBalance />
+          <SSegmented
+            options={[
+              { label: "1 гифт", value: "gift" },
+              { label: "1.33 TON", value: "ton" },
+            ]}
+          />
+          <SHeaderActions>
+            <SButton onClick={handleToHistory} icon={<RepeatTime />} />
+            <SButtonSecondary icon={<MessageIcon />} />
+          </SHeaderActions>
+        </SSettings>
 
-      <LotsList />
-    </SGamePvpPage>
+        <PlayerWheel players={players} onWinner={handleWinner} />
+        <SActions>
+          <AddingGifts />
+          <SAddWallet icon={<img src="/present.png" alt="present" />}>1.33 TON</SAddWallet>
+        </SActions>
+
+        <LotsList />
+      </SGamePvpPage>
+    </>
   );
 };
 
